@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Sistem Pakar Rekomendasi Karir Siswa</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>
-    @include('layouts.navbar')
+    @include('layouts.header')
     <div class="container mx-auto px-4">
         @yield('content')
     </div>
