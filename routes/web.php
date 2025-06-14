@@ -15,13 +15,12 @@ Route::middleware(['guest'])->group(function () {
         return view('auth.register');
     })->name('register');
 });
-Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
 
-    // Route::post('/logout', function () {
-    //     auth()->logout();
-    //     return redirect('/');
-    // })->name('logout');
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
 });
+// Route::middleware(['auth'])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->name('dashboard');
+// });

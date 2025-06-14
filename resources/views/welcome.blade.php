@@ -6,7 +6,7 @@
     <div class="container mx-auto px-5 py-24">
         <h1 class="text-4xl text-center font-bold mb-8">Temukan Jurusan dan Karir yang Sesuai untukmu!</h1>
         <p class="text-center text-gray-600 mb-12">Sistem ini dirancang untuk membantu siswa memilih jurusan dan
-            karir yang sesuai dengan minat dan kemampuan, dioperasikan oleh guru BK yang profesional.</p>
+            karir yang sesuai dengan minat dan kemampuan mereka.</p>
 
         <div class="flex flex-wrap justify-center">
             <div class="w-full md:w-1/2 p-6">
