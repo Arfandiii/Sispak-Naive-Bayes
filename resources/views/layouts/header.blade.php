@@ -1,4 +1,4 @@
-<header class="bg-blue-600 text-white p-4">
+<header class="bg-blue-600 text-white px-4">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <a href="#" class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
             <span class="ml-3 text-xl">Sistem Pakar Rekomendasi Karir Siswa</span>

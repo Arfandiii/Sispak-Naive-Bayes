@@ -6,7 +6,7 @@
         class="max-toolbar translate-x-24 scale-x-0 w-full -right-6 transition transform ease-in duration-300 flex items-center justify-between border-4 border-white bg-gray-800  absolute top-2 rounded-full h-12">
 
         <div class="pl-4 items-center space-x-2 ">
-            <div class="hover:cursor-pointer text-white hover:text-indigo-600">
+            <div class="hover:cursor-pointer text-white hover:text-blue-600">
                 <a href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
                         <path fill-rule="evenodd"
@@ -16,14 +16,14 @@
                 </a>
             </div>
         </div>
-        <div class="flex items-center space-x-3 group bg-indigo-600  pl-10 pr-2 py-1 rounded-full text-white  ">
+        <div class="flex items-center space-x-3 group bg-blue-600  pl-10 pr-2 py-1 rounded-full text-white  ">
             <div class="transform ease-in-out duration-300 mr-12">
                 Dashboard
             </div>
         </div>
     </div>
     <div onclick="openNav()"
-        class="hover:cursor-pointer -right-6 transition transform ease-in-out duration-500 flex border-4 border-white bg-gray-800 hover:bg-indigo-600 absolute top-2 p-3 rounded-full text-white hover:rotate-45">
+        class="hover:cursor-pointer -right-6 transition transform ease-in-out duration-500 flex border-4 border-white bg-gray-800 hover:bg-blue-600 absolute top-2 p-3 rounded-full text-white hover:rotate-45">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor"
             class="w-4 h-4">
             <path strokeLinecap="round" strokeLinejoin="round"
@@ -40,15 +40,12 @@
             <x-nav-link-admin iconType="users">Manajemen Pengguna</x-nav-link-admin>
         </a>
         <a href="#">
-            <x-nav-link-admin iconType="career">Rekomendasi Karir</x-nav-link-admin>
-        </a>
-        <a href="#">
             <x-nav-link-admin iconType="data">Manajemen Data</x-nav-link-admin>
         </a>
         <a href="#">
             <x-nav-link-admin iconType="settings">Pengaturan</x-nav-link-admin>
         </a>
-        <a href="#">
+        <a href="#" class="border-t-2 border-gray-700 pt-2">
             <x-nav-link-admin iconType="logout">Logout</x-nav-link-admin>
         </a>
 
@@ -60,9 +57,6 @@
         </a>
         <a href="#">
             <x-nav-link-mini-admin iconType="users"></x-nav-link-mini-admin>
-        </a>
-        <a href="#">
-            <x-nav-link-mini-admin iconType="career"></x-nav-link-mini-admin>
         </a>
         <a href="#">
             <x-nav-link-mini-admin iconType="data"></x-nav-link-mini-admin>
