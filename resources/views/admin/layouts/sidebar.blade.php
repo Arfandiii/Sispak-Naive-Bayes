@@ -45,9 +45,12 @@
         <a href="#">
             <x-nav-link-admin iconType="settings">Pengaturan</x-nav-link-admin>
         </a>
-        <a href="#" class="border-t-2 border-gray-700 pt-2">
-            <x-nav-link-admin iconType="logout">Logout</x-nav-link-admin>
-        </a>
+        <form action="{{ route('logout') }}" method="post" class="border-t-2 border-gray-700 pt-2">
+            @csrf
+            <button type="submit" class="w-full text-left">
+                <x-nav-link-admin iconType="logout">Logout</x-nav-link-admin>
+            </button>
+        </form>
 
     </div>
     <!-- MINI SIDEBAR-->
@@ -64,9 +67,12 @@
         <a href="#">
             <x-nav-link-mini-admin iconType="settings"></x-nav-link-mini-admin>
         </a>
-        <a href="#" class="border-t-2 border-gray-700 pt-2">
-            <x-nav-link-mini-admin iconType="logout"></x-nav-link-mini-admin>
-        </a>
+        <form action="{{ route('logout') }}" method="post" class="border-t-2 border-gray-700 pt-2">
+            @csrf
+            <button type="submit" class="w-full text-left">
+                <x-nav-link-mini-admin iconType="logout"></x-nav-link-mini-admin>
+            </button>
+        </form>
     </div>
 
 </aside>

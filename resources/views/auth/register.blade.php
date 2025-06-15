@@ -8,22 +8,23 @@
             <p class="text-center text-gray-600">Rekomendasi Karir Siswa</p>
         </div>
 
-        <form class="mt-6 space-y-6" action="#" method="POST">
+        <form class="mt-6 space-y-6" action="{{ route('register') }}" method="POST">
+            @csrf
             <div class="space-y-2">
                 <div>
                     <label class="text-sm font-medium text-gray-700"> Nama Lengkap </label>
-                    <input id="name" name="name" type="text" autocomplete="name" required
-                        class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm">
-                </div>
-                <div>
-                    <label class="text-sm font-medium text-gray-700"> Username </label>
-                    <input id="username" name="username" type="text" autocomplete="username" required
+                    <input id="name" name="name" type="text" autocomplete="name" required value="{{ old('name') }}"
                         class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm">
                 </div>
                 <div>
                     <label class="text-sm font-medium text-gray-700"> Email </label>
-                    <input id="email" name="email" type="email" autocomplete="email" required
+                    <input id="email" name="email" type="email" autocomplete="email" required value="{{ old('email') }}"
                         class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm">
+                    @error('email')
+                    <div class="text-red-600">
+                        {{ $message }}
+                    </div>
+                    @enderror
                 </div>
                 <div>
                     <label class="text-sm font-medium text-gray-700"> Password </label>
@@ -35,6 +36,11 @@
                     <input id="password_confirmation" name="password_confirmation" type="password"
                         autocomplete="new-password" required
                         class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm">
+                    @error('password')
+                    <div class="text-red-600">
+                        {{ $message }}
+                    </div>
+                    @enderror
                 </div>
             </div>
 

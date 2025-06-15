@@ -9,9 +9,9 @@
             <a href="#proses" class="mr-5 hover:text-white">Proses</a>
         </nav>
         <div class="inline-flex">
-            <a href="login.html"
+            <a href="{{ route('login') }}"
                 class="inline-flex items-center bg-white border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 text-blue-600">Login</a>
-            <a href="register.html"
+            <a href="{{ route('register') }}"
                 class="inline-flex items-center bg-white border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 ml-2 text-blue-600">Daftar</a>
         </div>
     </div>

@@ -6,7 +6,7 @@
 <!-- CONTENT -->
 <div class="content ml-12 transform ease-in-out duration-500 pt-20 px-2 md:px-5 pb-4">
     {{-- <x-breadcrumb :breadcrumbs="$breadcrumbs"></x-breadcrumb> --}}
-    <div class="flex flex-wrap my-5 -mx-2">
+    <div class="flex flex-wrap w-full my-5 -mx-2">
         <div class="w-full md:w-1/2 lg:w-1/3 p-2">
             <a href="#">
                 <div
@@ -65,7 +65,6 @@
                 </div>
             </a>
         </div>
-
         <div class="w-full md:w-1/2 lg:w-1/3 p-2">
             <a href="#">
                 <div
@@ -114,8 +113,6 @@
             </div>
         </div>
     </div>
-
-
 
     <div class="bg-white shadow rounded-lg p-4 mt-4">
         <h3 class="text-lg font-bold mb-4">Aktivitas Terbaru</h3>

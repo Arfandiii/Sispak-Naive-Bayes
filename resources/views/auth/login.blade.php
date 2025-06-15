@@ -9,7 +9,8 @@
             <p class="text-center text-gray-600">Rekomendasi Karir Siswa</p>
         </div>
 
-        <form class="mt-6 space-y-6" action="#" method="POST">
+        <form class="mt-6 space-y-6" action="{{ route('login') }}" method="POST">
+            @csrf
             <div class="space-y-2">
                 <div>
                     <label class="text-sm font-medium text-gray-700"> Email </label>
