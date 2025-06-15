@@ -5,22 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-
-class Career extends Model
+class History extends Model
 {
     use HasFactory;
-
+    
     protected $guarded = [
         'id',
     ];
 
-    public function rules()
+    public function career()
     {
-        return $this->hasMany(Rule::class);
+        return $this->belongsTo(Career::class);
     }
 
-    public function solutions()
+    public function studentAnswers()
     {
-        return $this->hasOne(Solution::class);
+        return $this->hasMany(StudentAnswer::class);
     }
+    
 }

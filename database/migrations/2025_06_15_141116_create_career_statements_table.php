@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('career_statements', function (Blueprint $table) {
             $table->id();
-            $table->text('pernyataan_karir');
+            $table->string('kode_pernyataan', 10)->unique();
+            $table->text('isi_pernyataan', 255);
             $table->timestamps();
         });
     }

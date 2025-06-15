@@ -1,0 +1,87 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Solution;
+use App\Models\Career;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class SolutionSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $data = [
+            [
+                'kode_solusi' => 'S01',
+                'kode_karir' => 'K01',
+                'solusi' => 'Profesi ini sangat dibutuhkan dalam dunia otomotif dan perawatan kendaraan. Untuk mempersiapkan diri, disarankan untuk mengembangkan keterampilan praktis melalui kegiatan praktik langsung, seperti magang di bengkel, atau mengikuti kursus bersertifikat di bidang otomotif. Mengasah kemampuan analisis, ketelitian, serta pemahaman tentang teknologi kendaraan modern juga sangat diperlukan karena perkembangan teknologi otomotif yang semakin pesat. Selain itu, aktiflah mencari pengalaman magang di bengkel atau tempat reparasi kendaraan untuk memperkuat keterampilan dan pemahamanmu tentang dunia kerja. Kamu juga bisa mengikuti pelatihan atau kursus tambahan untuk meningkatkan kemampuan teknis dan memahami perkembangan teknologi otomotif terbaru. Mekanik merupakan karir yang sesuai dengan kepribadian Realistic. Kepribadian ini cenderung menyukai pekerjaan yang melibatkan penggunaan alat atau mesin secara langsung. Individu dengan kepribadian realistis biasanya memiliki keterampilan praktis dan koordinasi motorik yang baik, sehingga dapat dengan mudah menangani tugas-tugas yang berhubungan dengan perbaikan dan pemeliharaan mesin.'
+            ],
+            [
+                'kode_solusi' => 'S02',
+                'kode_karir' => 'K02',
+                'solusi' => 'Dalam profesi ini siswa mulai mempersiapkan diri sejak dini, baik dari segi akademik maupun non-akademik. Secara akademik, siswa perlu menjaga nilai yang baik, terutama dalam mata pelajaran yang berkaitan dengan logika, bahasa, dan kewarganegaraan. Di sisi lain, kesiapan fisik juga menjadi aspek utama, sehingga penting bagi siswa untuk menjaga kebugaran tubuh melalui olahraga rutin dan gaya hidup sehat. Sikap disiplin, tanggung jawab, serta kemampuan bekerja dalam tim harus terus dikembangkan, karena nilai-nilai tersebut sangat dihargai dalam institusi kepolisian. Siswa untuk aktif mencari informasi tentang jalur masuk menjadi polisi, seperti melalui Sekolah Polisi Negara (SPN) atau Akademi Kepolisian (Akpol), serta mengikuti bimbingan atau pelatihan yang relevan. Polisi merupakan karir yang sesuai dengan kepribadian Realistic. Individu dengan kepribadian ini cenderung menyukai pekerjaan yang melibatkan aktivitas fisik, ketegasan, dan kemampuan untuk menghadapi situasi yang menantang. Kepribadian realistis biasanya memiliki sifat praktis dan berorientasi pada tindakan, yang sangat penting dalam menjalankan tugas-tugas kepolisian, seperti penyelidikan, penegakan hukum, dan penanganan situasi darurat.'
+            ],
+            [
+                'kode_solusi' => 'S03',
+                'kode_karir' => 'K03',
+                'solusi' => 'Untuk mencapai karir tersebut, siswa perlu mempersiapkan diri secara menyeluruh, baik dari aspek akademik, mental, maupun karakter. Secara akademik, siswa harus memiliki minat yang kuat dan prestasi yang baik dalam mata pelajaran sains, terutama Biologi, Kimia, dan Fisika, karena pelajaran-pelajaran tersebut menjadi dasar dalam pendidikan kedokteran. Disarankan juga siswa untuk mulai membiasakan diri dengan pola belajar yang terstruktur dan tekun, mengingat perjalanan pendidikan dokter membutuhkan waktu dan kesabaran yang tinggi. Selain itu, penting untuk mengembangkan empati, kepedulian terhadap sesama, serta kemampuan komunikasi yang baik, karena dokter harus mampu menjalin hubungan yang baik dengan pasien. Siswa juga perlu aktif mencari informasi mengenai jalur masuk Fakultas Kedokteran, baik melalui jalur SNBP, SNBT, maupun mandiri, serta mempersiapkan diri untuk mengikuti ujian masuk yang cukup kompetitif. Dokter merupakan karir yang sesuai dengan kepribadian investigative. Individu dengan kepribadian ini cenderung memiliki rasa ingin tahu yang tinggi, kemampuan analitis, dan ketertarikan dalam memecahkan masalah kompleks.'
+            ],
+            [
+                'kode_solusi' => 'S04',
+                'kode_karir' => 'K04',
+                'solusi' => 'Untuk mencapai karir tersebut siswa fokus pada mata pelajaran yang relevan seperti Biologi dan Kimia, karena kedua bidang ini menjadi dasar penting dalam pekerjaan analis kesehatan. Langkah pertama yang bisa kamu ambil adalah mencari tahu perguruan tinggi atau politeknik kesehatan yang memiliki jurusan D3 atau S1 Analis Kesehatan atau Teknologi Laboratorium Medis. Disarankan kamu untuk mempersiapkan diri sejak sekarang dengan mengikuti bimbingan belajar, try out, dan latihan soal-soal ujian masuk perguruan tinggi. Selain itu, penting juga untuk membangun kebiasaan belajar yang teratur, melatih ketelitian, dan menjaga kedisiplinan, karena profesi ini menuntut ketepatan dan tanggung jawab tinggi dalam bekerja. Analis kesehatan merupakan karir yang sesuai dengan kepribadian investigative. Individu dengan kepribadian ini memiliki rasa ingin tahu yang tinggi dan kemampuan analitis yang kuat, yang sangat penting dalam menganalisis data kesehatan dan melakukan penelitian.'
+            ],
+            [
+                'kode_solusi' => 'S05',
+                'kode_karir' => 'K05',
+                'solusi' => 'Untuk mencapai karir tersebut siswa membutuhkan kreativitas, kepekaan visual, dan kemampuan teknis yang baik. Setelah lulus SMA, kamu bisa mempertimbangkan untuk melanjutkan pendidikan di jurusan Fotografi, Desain Komunikasi Visual, atau Multimedia di perguruan tinggi atau lembaga pendidikan seni. Selain itu, membangun jaringan dengan komunitas fotografi dan mengikuti lomba atau pameran karya juga bisa menjadi cara untuk mengembangkan diri dan memperluas peluang. Fotografer merupakan karir yang sesuai dengan kepribadian Artistic. Individu dengan kepribadian ini cenderung memiliki imajinasi yang kaya, kreativitas yang tinggi, dan kemampuan untuk mengekspresikan diri melalui seni. Kepribadian artistik biasanya menyukai kebebasan berekspresi dan eksplorasi, yang memungkinkan fotografer untuk mengeksplorasi berbagai gaya dan teknik dalam karya mereka.'
+            ],
+            [
+                'kode_solusi' => 'S06',
+                'kode_karir' => 'K06',
+                'solusi' => 'Untuk mencapai karir tersebut disarankan untuk mulai membuat portofolio sederhana berisi hasil karya desainmu. Setelah lulus SMA, kamu bisa melanjutkan pendidikan ke jurusan Desain Komunikasi Visual (DKV) atau Multimedia di perguruan tinggi, politeknik, atau sekolah desain. Selain itu, aktif mengikuti workshop, pelatihan online, atau komunitas desain juga akan sangat membantu mengasah kemampuan dan menambah relasi. Desainer Grafis merupakan karir yang sesuai dengan kepribadian artistic. Individu dengan kepribadian ini memiliki kreativitas yang tinggi, imajinasi yang luas, dan kemampuan untuk mengekspresikan ide-ide melalui berbagai bentuk visual. Kepribadian artistik cenderung menyukai kebebasan berekspresi dan eksplorasi, yang memungkinkan desainer untuk mengeksplorasi berbagai gaya, warna, dan tipografi dalam karya mereka.'
+            ],
+            [
+                'kode_solusi' => 'S07',
+                'kode_karir' => 'K07',
+                'solusi' => 'Untuk mencapai karir tersebut, kamu perlu mempersiapkan diri sejak sekarang dengan fokus pada pelajaran seperti Bahasa Indonesia, PPKn, dan Sosiologi, karena kemampuan berpikir kritis, berargumentasi, serta memahami hukum dan sistem sosial sangat dibutuhkan dalam dunia hukum. Disarankan agar kamu mulai membiasakan diri membaca buku atau artikel hukum, mengikuti forum debat, dan melatih kemampuan berbicara di depan umum agar kepercayaan dirimu semakin berkembang. Setelah lulus SMA, kamu bisa melanjutkan pendidikan ke Fakultas Hukum di perguruan tinggi negeri atau swasta yang memiliki akreditasi baik. Di bangku kuliah, kamu akan mempelajari berbagai cabang hukum dan perlu menyelesaikan pendidikan hingga tahap magang dan mengikuti ujian profesi advokat. Pengacara merupakan karir yang sesuai dengan kepribadian Social. Individu dengan kepribadian ini cenderung memiliki kemampuan interpersonal yang kuat, empati, dan keinginan untuk membantu orang lain, yang merupakan kualitas penting dalam praktik hukum. Kepribadian sosial biasanya menyukai pekerjaan yang melibatkan kolaborasi dan komunikasi, sehingga pengacara sering kali bekerja dalam tim dan berpartisipasi dalam negosiasi untuk mencapai hasil yang terbaik bagi klien mereka.'
+            ],
+            [
+                'kode_solusi' => 'S08',
+                'kode_karir' => 'K08',
+                'solusi' => 'Untuk mencapai karir tersebut, langkah pertama yang perlu kamu lakukan adalah menentukan mata pelajaran apa yang paling kamu minati dan kuasai, karena itu akan menentukan jurusan kuliah yang akan kamu ambil nantinya, seperti Pendidikan Matematika, Bahasa Indonesia, Biologi, atau lainnya. Disarankan untuk terus meningkatkan kemampuan akademik, khususnya pada mata pelajaran yang relevan, serta mengasah kemampuan komunikasi, kepemimpinan, dan empati, karena seorang guru harus mampu menyampaikan materi dengan baik dan memahami kebutuhan siswanya. Setelah lulus SMA, kamu bisa melanjutkan pendidikan di Keguruan dan Ilmu Pendidikan (FKIP). Selain itu, penting juga untuk aktif dalam kegiatan organisasi, mentoring, atau mengajar les sebagai pengalaman awal dalam dunia pendidikan. Guru merupakan karir yang sesuai dengan kepribadian Social. Individu dengan kepribadian ini cenderung memiliki kemampuan interpersonal yang kuat, empati, dan keinginan untuk membantu orang lain, yang merupakan kualitas penting dalam dunia pendidikan. Kepribadian sosial biasanya menyukai lingkungan yang kolaboratif dan dinamis, sehingga guru dapat menciptakan suasana belajar yang positif dan inklusif.'
+            ],
+            [
+                'kode_solusi' => 'S09',
+                'kode_karir' => 'K09',
+                'solusi' => 'Untuk mencapai karir tersebut, kamu perlu mulai mengembangkan jiwa wirausaha sejak sekarang dengan belajar tentang dasar-dasar bisnis, manajemen keuangan, pemasaran, dan komunikasi. Disarankan kamu untuk aktif mengikuti kegiatan kewirausahaan di sekolah, seperti mengikuti klub bisnis, pelatihan kewirausahaan, atau lomba bisnis, serta mencoba memulai usaha kecil-kecilan untuk mengasah kemampuan praktis. Penting juga untuk membangun jaringan dengan pelaku bisnis dan mencari mentor yang dapat membimbingmu. Setelah lulus SMA, kamu bisa memilih jurusan bisnis, manajemen, atau kewirausahaan di perguruan tinggi untuk memperdalam pengetahuan dan keterampilanmu. Selain itu, teruslah belajar dari pengalaman, berani mengambil risiko, dan memiliki mental pantang menyerah agar dapat menghadapi tantangan dunia bisnis. Pengusaha merupakan karir yang sesuai dengan kepribadian Enterprising. Individu dengan kepribadian ini cenderung memiliki sifat kepemimpinan yang kuat, keberanian untuk mengambil risiko, dan kemampuan untuk memotivasi orang lain, yang semuanya sangat penting dalam dunia bisnis. Kepribadian enterprising biasanya menyukai tantangan dan memiliki dorongan untuk mencapai tujuan, sehingga mereka sering kali berinovasi dan mencari peluang baru di pasar.'
+            ],
+            [
+                'kode_solusi' => 'S10',
+                'kode_karir' => 'K10',
+                'solusi' => 'Untuk mencapai karir tersebut, kamu perlu memperkuat dasar-dasar logika dan matematika, karena keduanya sangat membantu dalam memahami konsep pemrograman. Disarankan untuk mulai belajar bahasa pemrograman dasar seperti Python, Java, atau JavaScript melalui buku, tutorial online, atau kursus coding yang banyak tersedia secara gratis maupun berbayar. Selain itu, cobalah untuk mengerjakan proyek kecil, seperti membuat aplikasi sederhana atau website, untuk melatih kemampuan praktismu sekaligus membangun portofolio. Setelah lulus SMA, kamu bisa melanjutkan pendidikan di jurusan Teknik Informatika, Ilmu Komputer, atau Sistem Informasi di perguruan tinggi. Bisa juga dengan aktif bergabung dalam pelatihan coding agar kemampuan dan jaringanmu semakin berkembang. Programmer merupakan karir yang sesuai dengan kepribadian Conventional. Individu dengan kepribadian ini cenderung memiliki kecenderungan untuk mengikuti aturan, menyukai struktur, dan memiliki perhatian yang tinggi terhadap detail, yang semuanya sangat penting dalam pengembangan perangkat lunak. Kepribadian conventional biasanya menyukai pekerjaan yang terorganisir dan sistematis, sehingga programmer dapat bekerja dengan baik dalam lingkungan yang memerlukan pemecahan masalah logis dan analitis.'
+            ],
+            [
+                'kode_solusi' => 'S11',
+                'kode_karir' => 'K11',
+                'solusi' => 'Untuk mencapai karir tersebut, kamu perlu fokus meningkatkan kemampuan di bidang matematika dan ekonomi, serta mengasah kemampuan komunikasi dan pelayanan karena pekerjaan di perbankan sering berhubungan langsung dengan nasabah. Disarankan untuk mulai mencari informasi tentang jurusan yang relevan, seperti Manajemen, Akuntansi, atau Ekonomi di perguruan tinggi, karena jurusan-jurusan ini menjadi dasar kuat untuk bekerja di dunia perbankan. Selain itu, kamu bisa mengikuti pelatihan atau kursus singkat mengenai keuangan dan perbankan, serta magang di bank atau lembaga keuangan lain untuk mendapatkan pengalaman langsung. Banker merupakan karir yang sesuai dengan kepribadian Conventional. Individu dengan kepribadian ini cenderung memiliki kecenderungan untuk mengikuti aturan, menyukai struktur, dan memiliki perhatian yang tinggi terhadap detail, yang semuanya sangat penting dalam dunia perbankan.'
+            ]
+        ];
+
+        foreach ($data as $item) {
+            $career = Career::where('kode_karir', $item['kode_karir'])->first();
+
+            if ($career) {
+                Solution::create([
+                    'kode_solusi' => $item['kode_solusi'],
+                    'career_id' => $career->id, // gunakan ID sebagai foreign key
+                    'solusi' => $item['solusi'],
+                ]);
+            }
+        }
+    }
+}

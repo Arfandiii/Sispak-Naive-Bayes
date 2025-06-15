@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('careers', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_karir');
-            $table->string('tipe_kepribadian');
+            $table->string('kode_karir', 10)->unique();
+            $table->string('nama_karir', 100);
+            $table->string('tipe_kepribadian', 50);
             $table->timestamps();
         });
     }
