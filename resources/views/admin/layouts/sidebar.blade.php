@@ -33,14 +33,17 @@
 
     <!-- MAX SIDEBAR-->
     <div class="max hidden text-white mt-20 flex-col space-y-2 w-full h-[calc(100vh)]">
-        <a href="#">
+        <a href="{{ route('admin.dashboard') }}">
             <x-nav-link-admin iconType="dashboard">Dashboard</x-nav-link-admin>
         </a>
         <a href="#">
             <x-nav-link-admin iconType="users">Manajemen Pengguna</x-nav-link-admin>
         </a>
-        <a href="#">
+        <a href="{{ route('admin.data.index') }}">
             <x-nav-link-admin iconType="data">Manajemen Data</x-nav-link-admin>
+        </a>
+        <a href="#">
+            <x-nav-link-admin iconType="history">History</x-nav-link-admin>
         </a>
         <a href="#">
             <x-nav-link-admin iconType="settings">Pengaturan</x-nav-link-admin>
@@ -55,14 +58,17 @@
     </div>
     <!-- MINI SIDEBAR-->
     <div class="mini mt-20 flex flex-col space-y-2 w-full h-[calc(100vh)]">
-        <a href="#">
+        <a href="{{ route('admin.dashboard') }}">
             <x-nav-link-mini-admin iconType="dashboard"></x-nav-link-mini-admin>
         </a>
         <a href="#">
             <x-nav-link-mini-admin iconType="users"></x-nav-link-mini-admin>
         </a>
-        <a href="#">
+        <a href="{{ route('admin.data.index') }}">
             <x-nav-link-mini-admin iconType="data"></x-nav-link-mini-admin>
+        </a>
+        <a href="#">
+            <x-nav-link-mini-admin iconType="history"></x-nav-link-mini-admin>
         </a>
         <a href="#">
             <x-nav-link-mini-admin iconType="settings"></x-nav-link-mini-admin>

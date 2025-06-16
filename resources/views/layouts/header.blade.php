@@ -13,6 +13,12 @@
                 class="inline-flex items-center bg-white border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 text-blue-600">Login</a>
             <a href="{{ route('register') }}"
                 class="inline-flex items-center bg-white border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0 ml-2 text-blue-600">Daftar</a>
+            <form action="{{ route('logout') }}" method="post" class="border-t-2 border-gray-700 pt-2">
+                @csrf
+                <button type="submit" class="w-full text-left">
+                    <x-nav-link-mini-admin iconType="logout">ss</x-nav-link-mini-admin>
+                </button>
+            </form>
         </div>
     </div>
 </header>

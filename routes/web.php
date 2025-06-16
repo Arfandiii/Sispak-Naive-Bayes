@@ -3,6 +3,10 @@
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\user\DashboardController as UserDashboardController;
+use App\Http\Controllers\DataManagementController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -15,14 +19,15 @@ Route::middleware(['guest'])->group(function () {
     Route::post('/register', [AuthController::class, 'store']);
 });
 
-Route::get('/dashboard', function () {
-    return view('admin.dashboard')->name('dashboard');
-});
-
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('admin.dashboard');
+    Route::middleware(['role:admin'])->prefix('admin')->name('admin.')->group(function () {
+        Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+        Route::resource('data', DataManagementController::class);
+    });
+
+    Route::middleware(['role:user'])->name('user.')->group(function () {
+        Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('dashboard');
+    });
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
