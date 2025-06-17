@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('career_statement_id')->constrained('career_statements')->onDelete('cascade');
             $table->boolean('jawaban'); // true for 'ya', false for 'tidak'
+            $table->index(['user_id', 'career_statement_id']);
             $table->timestamps();
         });
     }

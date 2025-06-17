@@ -31,15 +31,25 @@ class RuleSeeder extends Seeder
         
         foreach ($rules as [$kodeRule, $kodeKarir, $kodePernyataanList]) {
             $career = Career::where('kode_karir', $kodeKarir)->first();
+
+            if (!$career) {
+                $this->command->warn("Karir dengan kode $kodeKarir tidak ditemukan.");
+                continue;
+            }
+
             foreach ($kodePernyataanList as $kodePernyataan) {
                 $statement = CareerStatement::where('kode_pernyataan', $kodePernyataan)->first();
-                if ($career && $statement) {
-                    Rule::create([
-                        'kode_rule' => $kodeRule,
-                        'career_id' => $career->id,
-                        'career_statement_id' => $statement->id,
-                    ]);
+
+                if (!$statement) {
+                    $this->command->warn("Pernyataan dengan kode $kodePernyataan tidak ditemukan.");
+                    continue;
                 }
+
+                Rule::firstOrCreate([
+                    'kode_rule' => $kodeRule,
+                    'career_id' => $career->id,
+                    'career_statement_id' => $statement->id,
+                ]);
             }
         }
     }

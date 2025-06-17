@@ -62,4 +62,9 @@ class DashboardController extends Controller
     {
         //
     }
+
+    public function profile()
+    {
+        return view('siswa.profile');
+    }
 }

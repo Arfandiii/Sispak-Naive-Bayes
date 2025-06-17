@@ -9,13 +9,12 @@ use App\Http\Controllers\DataManagementController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\CareerStatementController;
 use App\Http\Controllers\RuleController;
-use App\Http\Controllers\StudentAnswersController;
+use App\Http\Controllers\user\KonsultasiController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/konsultasi', [StudentAnswersController::class, 'index'])->name('konsultasi');
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
@@ -35,8 +34,10 @@ Route::middleware(['auth'])->group(function () {
     
     Route::middleware(['role:user'])->name('user.')->group(function () {
         Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('dashboard');
-        Route::resource('student-answers', StudentAnswersController::class);
-        Route::get('/results', [StudentAnswersController::class, 'showResults'])->name('results');
+        Route::get('/dashboard/profile', [UserDashboardController::class, 'profile'])->name('dashboard.profile');
+        Route::resource('konsultasi', KonsultasiController::class);
+        Route::post('/konsultasi', [KonsultasiController::class, 'proses'])->name('konsultasi.proses');
+        Route::get('/konsultasi-result', [KonsultasiController::class, 'result'])->name('konsultasi.result');
     });
     
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
