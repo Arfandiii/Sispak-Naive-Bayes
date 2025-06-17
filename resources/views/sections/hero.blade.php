@@ -6,8 +6,7 @@
 
         <div class="flex flex-wrap justify-center">
             <div class="w-full md:w-1/2 p-6">
-                <img src="https://source.unsplash.com/random/800x500/?career" alt="Karir"
-                    class="w-full rounded-lg shadow-md">
+                <img src="{{ asset('images/karir.jpg') }}" alt="Karir" class="w-full rounded-lg shadow-md">
             </div>
             <div class="w-full md:w-1/2 p-6">
                 <h2 class="text-2xl font-bold mb-4">Mengapa Menggunakan Sistem Kami?</h2>
@@ -23,7 +22,7 @@
                     <li>Dukungan terstruktur dalam proses pemilihan jurusan</li>
                     <li>Rekomendasi yang akurat dengan naive bayes</li>
                 </ul>
-                <a href="#daftar"
+                <a href="{{ route('konsultasi') }}"
                     class="inline-flex items-center bg-blue-600 border-0 py-2 px-6 focus:outline-none hover:bg-blue-700 rounded text-white">Mulai
                     Pengujian</a>
             </div>

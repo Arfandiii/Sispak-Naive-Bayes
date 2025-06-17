@@ -19,7 +19,6 @@ class DatabaseSeeder extends Seeder
             CareerSeeder::class,
             CareerStatementSeeder::class,
             RuleSeeder::class,
-            SolutionSeeder::class,
         ]);
 
         // User::factory()->create([

@@ -1,18 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\user;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class CareerStatementController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('siswa.dashboard');
+        //
     }
 
     /**
@@ -20,7 +19,7 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.data.career_statement.create');
     }
 
     /**
@@ -44,7 +43,7 @@ class DashboardController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.data.career_statement.edit');
     }
 
     /**

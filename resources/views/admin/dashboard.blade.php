@@ -7,7 +7,7 @@
 <div class="content ml-12 transform ease-in-out duration-500 pt-20 px-2 md:px-5 pb-4">
     {{-- <x-breadcrumb :breadcrumbs="$breadcrumbs"></x-breadcrumb> --}}
     <div class="flex flex-wrap w-full my-5 -mx-2">
-        <div class="w-full md:w-1/2 lg:w-1/3 p-2">
+        <div class="w-full md:w-1/2 lg:w-1/2 p-2">
             <a href="#">
                 <div
                     class="flex items-center flex-row w-full hover:shadow hover:bg-indigo-500 bg-indigo-600 rounded-md p-3">
@@ -36,7 +36,7 @@
                 </div>
             </a>
         </div>
-        <div class="w-full md:w-1/2 lg:w-1/3 p-2">
+        <div class="w-full md:w-1/2 lg:w-1/2 p-2">
             <a href="#">
                 <div
                     class="flex items-center flex-row w-full hover:shadow hover:bg-indigo-500 bg-indigo-600 rounded-md p-3">
@@ -54,35 +54,6 @@
                         </div>
                         <div class="">
                             {{-- {{ $totalBooks }} --}}
-                        </div>
-                    </div>
-                    <div class=" flex items-center flex-none text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
-                            stroke="currentColor" class="w-6 h-6">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                        </svg>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="w-full md:w-1/2 lg:w-1/3 p-2">
-            <a href="#">
-                <div
-                    class="flex items-center flex-row w-full hover:shadow hover:bg-indigo-500 bg-indigo-600 rounded-md p-3">
-                    <div
-                        class="flex text-indigo-600 items-center bg-white p-2 rounded-md flex-none w-8 h-8 md:w-12 md:h-12 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="object-scale-down transition duration-500">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-                        </svg>
-                    </div>
-                    <div class="flex flex-col justify-around flex-grow ml-5 text-white">
-                        <div class="whitespace-nowrap">
-                            Pengguna Baru
-                        </div>
-                        <div class="">
-                            {{-- {{ $totalLoans }} --}}
                         </div>
                     </div>
                     <div class=" flex items-center flex-none text-white">

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('kode_karir', 10)->unique();
             $table->string('nama_karir', 100);
             $table->string('tipe_kepribadian', 50);
+            $table->text('solusi', 255);
             $table->timestamps();
         });
     }

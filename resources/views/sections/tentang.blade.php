@@ -20,8 +20,7 @@
                 </ul>
             </div>
             <div class="w-full md:w-1/2 p-6">
-                <img src="https://source.unsplash.com/random/800x500/?education" alt="Edukasi"
-                    class="w-full rounded-lg shadow-md">
+                <img src="{{ asset('images/edukasi.jpg') }}" alt="Edukasi" class="w-full rounded-lg shadow-md">
             </div>
         </div>
     </div>

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('rules', function (Blueprint $table) {
             $table->id();
+            $table->string('kode_rule', 10);
             $table->foreignId('career_id')->constrained('careers')->onDelete('cascade');
             $table->foreignId('career_statement_id')->constrained('career_statements')->onDelete('cascade');
             $table->timestamps();

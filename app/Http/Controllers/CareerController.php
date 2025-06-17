@@ -19,7 +19,7 @@ class CareerController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.data.career.create');
     }
 
     /**
@@ -43,7 +43,7 @@ class CareerController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.data.career.edit');
     }
 
     /**

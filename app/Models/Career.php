@@ -18,9 +18,4 @@ class Career extends Model
     {
         return $this->hasMany(Rule::class);
     }
-
-    public function solutions()
-    {
-        return $this->hasOne(Solution::class);
-    }
 }

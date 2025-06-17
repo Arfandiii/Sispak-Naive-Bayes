@@ -11,11 +11,11 @@
             <div class="w-full md:w-1/3 p-6">
                 <h3 class="text-xl font-bold mb-4">Hubungi Kami</h3>
                 <p class="text-gray-300">
-                    <svg class="w-4 h-4 inline-block mr-2" fill="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 2h16v12H4V6zm8 8c0 .6-.4 1-1 1H6v2h5v2h2v-2h5v-2h-2V9h-5v2h-2v2z">
-                        </path>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        class="w-4 h-4 inline-block mr-2">
+                        <path fill-rule="evenodd"
+                            d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
+                            clip-rule="evenodd" />
                     </svg>
                     +62 812 3456 7890
                 </p>
