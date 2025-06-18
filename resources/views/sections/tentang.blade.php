@@ -1,22 +1,37 @@
-<section id="tentang" class="bg-gray-100 py-20">
+<section id="tentang" class="bg-gray-100 w-full py-20">
     <div class="container mx-auto px-5 py-24">
         <h2 class="text-3xl font-bold mb-12 text-center">Tentang Sistem Pakar</h2>
-
         <div class="flex flex-wrap">
             <div class="w-full md:w-1/2 p-6">
-                <p class="text-gray-600 mb-6">
-                    Sistem Pakar Rekomendasi Karir Siswa adalah alat yang dirancang khusus untuk membantu siswa
-                    dalam memilih jurusan dan karir yang sesuai dengan profil pribadi mereka. Sistem ini
-                    dioperasikan oleh guru BK yang profesional dan berpengalaman.
+                <p class="text-gray-700 mb-5 text-lg leading-relaxed">
+                    <span class="font-semibold text-blue-700">Sistem Pakar Rekomendasi Karir Siswa</span> adalah alat
+                    yang dirancang khusus untuk membantu siswa dalam memilih jurusan dan karir yang sesuai dengan profil
+                    pribadi mereka.
                 </p>
-                <p class="text-gray-600 mb-6">
+                <p class="text-gray-700 mb-5 text-lg">
                     Melalui serangkaian analisis minat, bakat, dan kemampuan, guru BK akan membantu siswa:
                 </p>
-                <ul class="list-disc pl-5 mb-6">
-                    <li>Memahami minat dan keahlian mereka</li>
-                    <li>Mengenal berbagai pilihan jurusan dan karir</li>
-                    <li>Menghubungkan minat dengan pilihan jurusan yang tepat</li>
-                    <li>Menyiapkan diri untuk masa depan</li>
+                <ul class="list-disc pl-6 space-y-3 text-gray-700 text-base">
+                    <li>
+                        <span class="font-medium text-lg text-blue-600">Memahami minat dan keahlian:</span>
+                        <span class="block text-gray-600 text-lg">Membantu siswa mengenali potensi diri dan bidang
+                            yang diminati.</span>
+                    </li>
+                    <li>
+                        <span class="font-medium text-lg text-blue-600">Mengenal pilihan jurusan & karir:</span>
+                        <span class="block text-gray-600 text-lg">Memberikan informasi lengkap tentang berbagai
+                            jurusan dan prospek karir.</span>
+                    </li>
+                    <li>
+                        <span class="font-medium text-lg text-blue-600">Menghubungkan minat & jurusan:</span>
+                        <span class="block text-gray-600 text-lg">Mengarahkan siswa memilih jurusan yang sesuai
+                            dengan minat dan bakat.</span>
+                    </li>
+                    <li>
+                        <span class="font-medium text-lg text-blue-600">Persiapan masa depan:</span>
+                        <span class="block text-gray-600 text-lg">Membekali siswa dengan strategi dan motivasi
+                            untuk meraih cita-cita.</span>
+                    </li>
                 </ul>
             </div>
             <div class="w-full md:w-1/2 p-6">

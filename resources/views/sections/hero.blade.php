@@ -14,13 +14,16 @@
                     Sistem kami dikembangkan untuk membantu siswa mengenali minat dan potensi mereka, serta
                     memberikan rekomendasi jurusan dan karir yang sesuai.
                 </p>
-                <ul class="list-disc pl-5 mb-6">
-                    <li>Analisis berbasis minat dan keahlian siswa</li>
-                    <li>Informasi jurusan dan karir yang terkini</li>
-                    <li>Bimbingan langsung dari guru BK</li>
-                    <li>Antarmuka pengguna yang mudah digunakan</li>
-                    <li>Dukungan terstruktur dalam proses pemilihan jurusan</li>
-                    <li>Rekomendasi yang akurat dengan naive bayes</li>
+                <ul class="list-disc pl-6 mb-8 space-y-2 text-gray-800">
+                    <li><span class="font-semibold text-blue-600">Analisis</span> berbasis minat dan keahlian siswa
+                    </li>
+                    <li><span class="font-semibold text-blue-600">Antarmuka</span> pengguna yang mudah digunakan
+                    </li>
+                    <li><span class="font-semibold text-blue-600">Dukungan</span> terstruktur dalam proses pemilihan
+                        karir</li>
+                    <li><span class="font-semibold text-blue-600">Rekomendasi</span> berdasarkan algoritma dengan naive
+                        bayes
+                    </li>
                 </ul>
                 <a href="{{ route('user.konsultasi.index') }}"
                     class="inline-flex items-center bg-blue-600 border-0 py-2 px-6 focus:outline-none hover:bg-blue-700 rounded text-white">Mulai

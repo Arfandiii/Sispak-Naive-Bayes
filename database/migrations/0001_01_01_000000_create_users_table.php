@@ -21,7 +21,6 @@ return new class extends Migration
             $table->enum('role', ['user', 'admin'])->default('user');
             $table->string('phone')->nullable();
             $table->date('dob')->nullable();
-            $table->string('profile_picture')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -34,9 +34,13 @@ Route::middleware(['auth'])->group(function () {
     
     Route::middleware(['role:user'])->name('user.')->group(function () {
         Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('dashboard');
-        Route::get('/dashboard/profile', [UserDashboardController::class, 'profile'])->name('dashboard.profile');
-        Route::resource('konsultasi', KonsultasiController::class);
-        Route::post('/konsultasi', [KonsultasiController::class, 'proses'])->name('konsultasi.proses');
+        Route::get('/profile', [UserDashboardController::class, 'profile'])->name('dashboard.profile');
+        Route::get('/profile/edit', [UserDashboardController::class, 'edit'])->name('profile.edit');
+        Route::post('/profile/update', [UserDashboardController::class, 'update'])->name('profile.update');
+        Route::get('/result-detail/{career_id}', [UserDashboardController::class, 'resultDetail'])->name('konsultasi.resultDetail');
+        Route::get('/konsultasi', [KonsultasiController::class, 'index'])->name('konsultasi.index');
+        Route::post('/konsultasi', [KonsultasiController::class, 'store'])->name('konsultasi.store');
+        Route::match(['get', 'post'],'/konsultasi/proses', [KonsultasiController::class, 'proses'])->name('konsultasi.proses');
         Route::get('/konsultasi-result', [KonsultasiController::class, 'result'])->name('konsultasi.result');
     });
     

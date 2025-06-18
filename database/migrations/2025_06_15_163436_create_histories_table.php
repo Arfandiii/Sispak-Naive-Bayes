@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('histories', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('career_id')->nullable()->constrained('careers')->onDelete('cascade');
+            $table->foreignId('career_id')->nullable()->constrained('careers')->onDelete('cascade');        
             $table->decimal('prior', 8, 6)->nullable();         // opsional
-            $table->decimal('likelihood', 8, 6)->nullable();    // opsional
+            $table->decimal('likehood', 8, 6)->nullable();    // opsional
             $table->decimal('probabilitas', 8, 6)->nullable();  // nilai akhir
             $table->timestamps();
         });
