@@ -36,7 +36,7 @@
         <a href="{{ route('admin.dashboard') }}">
             <x-nav-link-admin iconType="dashboard">Dashboard</x-nav-link-admin>
         </a>
-        <a href="#">
+        <a href="{{ route('admin.users.index') }}">
             <x-nav-link-admin iconType="users">Manajemen Pengguna</x-nav-link-admin>
         </a>
         <a href="{{ route('admin.data.index') }}">
@@ -61,7 +61,7 @@
         <a href="{{ route('admin.dashboard') }}">
             <x-nav-link-mini-admin iconType="dashboard"></x-nav-link-mini-admin>
         </a>
-        <a href="#">
+        <a href="{{ route('admin.users.index') }}">
             <x-nav-link-mini-admin iconType="users"></x-nav-link-mini-admin>
         </a>
         <a href="{{ route('admin.data.index') }}">

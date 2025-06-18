@@ -2,14 +2,15 @@
 
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\admin\DashboardController as AdminDashboardController;
-use App\Http\Controllers\user\DashboardController as UserDashboardController;
-use App\Http\Controllers\DataManagementController;
-use App\Http\Controllers\CareerController;
-use App\Http\Controllers\CareerStatementController;
-use App\Http\Controllers\RuleController;
-use App\Http\Controllers\user\KonsultasiController;
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\DataManagementController;
+use App\Http\Controllers\Admin\CareerController;
+use App\Http\Controllers\Admin\CareerStatementController;
+use App\Http\Controllers\Admin\RuleController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\User\DashboardController as UserDashboardController;
+use App\Http\Controllers\User\KonsultasiController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,6 +27,8 @@ Route::middleware(['guest'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::middleware(['role:admin'])->prefix('admin')->name('admin.')->group(function () {
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+        Route::resource('users', UserController::class);
+        Route::patch('/users/{user}/verify', [UserController::class, 'verify'])->name('users.verify');
         Route::resource('data', DataManagementController::class);
         Route::resource('career', CareerController::class);
         Route::resource('career-statement', CareerStatementController::class);

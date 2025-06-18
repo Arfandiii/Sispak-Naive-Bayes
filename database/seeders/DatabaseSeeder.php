@@ -21,10 +21,12 @@ class DatabaseSeeder extends Seeder
             RuleSeeder::class,
         ]);
 
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        User::factory()->create([
+            'name' => 'Test User',
+            'role' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('password'),
+        ]);
     }
     
 }

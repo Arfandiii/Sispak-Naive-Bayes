@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class RuleController extends Controller
+class CareerController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -19,7 +20,7 @@ class RuleController extends Controller
      */
     public function create()
     {
-        return view('admin.data.rule.create');
+        return view('admin.data.career.create');
     }
 
     /**
@@ -43,7 +44,7 @@ class RuleController extends Controller
      */
     public function edit(string $id)
     {
-        return view('admin.data.rule.edit');
+        return view('admin.data.career.edit');
     }
 
     /**

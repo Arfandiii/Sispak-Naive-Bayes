@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Models\Career;
 use App\Models\CareerStatement;
 use App\Models\Rule;
-use App\Models\Solution;
+use Illuminate\Http\Request;
 
 class DataManagementController extends Controller
 {

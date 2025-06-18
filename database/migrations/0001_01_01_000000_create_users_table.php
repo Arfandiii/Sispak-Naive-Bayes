@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->integer('nisn')->nullable()->unique();
+            $table->string('nisn', 10)->nullable()->unique(); // atau cukup 10 jika yakin tetap 10 digit
             $table->enum('role', ['user', 'admin'])->default('user');
             $table->string('phone')->nullable();
             $table->date('dob')->nullable();
