@@ -20,7 +20,7 @@
                         <h3 class="text-lg font-medium text-green-800">Nilai Posterior Tertinggi</h3>
                         <p class="text-2xl font-bold text-green-600">
                             {{ $rekomendasiTertinggi ? number_format($rekomendasiTertinggi->probabilitas * 100, 2) . '%'
-                            : '-' }}
+                            : '0' }}
                         </p>
                     </div>
                 </a>

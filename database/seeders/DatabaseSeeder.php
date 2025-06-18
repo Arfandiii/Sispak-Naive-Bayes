@@ -27,6 +27,9 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => bcrypt('password'),
         ]);
+
+        // Tambah 10 user biasa
+        User::factory(10)->create();
     }
     
 }

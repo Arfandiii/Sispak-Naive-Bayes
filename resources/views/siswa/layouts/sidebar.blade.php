@@ -37,10 +37,10 @@
             <x-nav-link-user iconType="dashboard">Dashboard</x-nav-link-user>
         </a>
         <a href="{{ route('user.konsultasi.index') }}">
-            <x-nav-link-user iconType="test">Pengujian Karir</x-nav-link-user>
+            <x-nav-link-user iconType="test">Konsultasi Karir</x-nav-link-user>
         </a>
         <a href="{{ route('user.konsultasi.result') }}">
-            <x-nav-link-user iconType="result">Hasil Pengujian</x-nav-link-user>
+            <x-nav-link-user iconType="result">Hasil Konsultasi</x-nav-link-user>
         </a>
         <a href="{{ route('user.dashboard.profile') }}">
             <x-nav-link-user iconType="profile">Profile</x-nav-link-user>
