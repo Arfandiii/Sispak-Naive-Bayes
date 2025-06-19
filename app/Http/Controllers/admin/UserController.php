@@ -14,11 +14,20 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::where('role', 'user')->latest()->paginate(5);
-        $users->appends(request()->query());
-        return view('admin.users.index', compact('users'));
+        $search = $request->query('search');
+
+        $users = User::where('role', 'user')
+            ->when($search, function ($query) use ($search) {
+                $query->where('name', 'like', "%{$search}%")
+                ->orWhere('email', 'like', "%{$search}%");
+            })
+            ->latest()
+            ->paginate(10)
+            ->appends(['search' => $search]); // agar query string tetap di pagination
+    
+        return view('admin.users.index', compact('users', 'search'));
     }
 
     public function verify(Request $request, User $user)
@@ -36,13 +45,6 @@ class UserController extends Controller
     public function create()
     {
     //     $title = 'Tambah Pengguna';
-
-        // Breadcrumbs array
-        // $breadcrumbs = [
-        //     ['name' => 'Dashboard', 'url' => route('admin.dashboard'), 'icon' => 'home'],
-        //     ['name' => 'Users', 'url' => route('admin.users.index'), 'icon' => 'user-group'],
-        //     ['name' => 'Create User', 'url' => route('admin.users.create'), 'icon' => 'create']
-        // ];, compact('breadcrumbs', 'title')
 
         return view('admin.users.create');
     }
@@ -97,7 +99,8 @@ class UserController extends Controller
             'email' => ['required', 'string', 'email:dns', 'max:255', 'unique:users,email,' . $user->id],
             'phone' => ['nullable', 'string'],
             'dob' => ['nullable', 'date'],
-            'nisn' => ['nullable', 'string'],]);
+            'nisn' => ['nullable', 'string'],
+        ]);
     
         // Admin hanya bisa mengubah nama, email, edu_level_id, phone, dan dob
         $user->update([

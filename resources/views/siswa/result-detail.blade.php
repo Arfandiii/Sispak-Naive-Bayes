@@ -7,8 +7,9 @@
             class="max-w-3xl mx-auto mt-10 bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl shadow-lg border border-blue-200">
             <div class="flex items-center mb-6">
                 <div
-                    class="bg-blue-600 text-white rounded-full h-14 w-14 flex items-center justify-center text-2xl font-bold shadow">
-                    {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
+                    class="bg-blue-600 text-white rounded-full h-14 w-14 flex items-center justify-center text-2xl font-bold shadow object-cover overflow-hidden border-4 border-blue-200">
+                    <img src="https://ui-avatars.com/api/?name={{ urlencode(Auth::user()->name) }}&background=3b82f6&color=fff&size=128"
+                        alt="Profile Picture" class="object-cover w-full h-full">
                 </div>
                 <div class="ml-4">
                     <h2 class="text-lg text-gray-700">Halo,</h2>
@@ -31,9 +32,9 @@
             </div>
 
             <div class="mt-8 text-center">
-                <a href="{{ route('user.konsultasi.result') }}"
+                <a href="{{ route('user.dashboard') }}"
                     class="inline-block bg-blue-600 text-white px-6 py-2 rounded-full shadow hover:bg-blue-700 transition">&larr;
-                    Kembali ke hasil</a>
+                    Kembali ke dashboard</a>
             </div>
         </div>
     </div>

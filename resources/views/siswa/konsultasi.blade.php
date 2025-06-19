@@ -35,7 +35,8 @@
                     </div>
 
                     <div class="text-right">
-                        <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                        <button type="submit"
+                            class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 cursor-pointer">
                             Simpan Jawaban
                         </button>
                     </div>

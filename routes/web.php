@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\RuleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\User\DashboardController as UserDashboardController;
 use App\Http\Controllers\User\KonsultasiController;
+use App\Http\Controllers\Admin\HistoryController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,12 +28,17 @@ Route::middleware(['guest'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::middleware(['role:admin'])->prefix('admin')->name('admin.')->group(function () {
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+        Route::get('/profile', [AdminDashboardController::class, 'profile'])->name('dashboard.profile');
+        Route::get('/profile/edit', [AdminDashboardController::class, 'edit'])->name('profile.edit');
+        Route::post('/profile/update', [AdminDashboardController::class, 'update'])->name('profile.update');
+        Route::post('/admin/password/update', [AdminDashboardController::class, 'updatePassword'])->name('dashboard.password.update');
         Route::resource('users', UserController::class);
         Route::patch('/users/{user}/verify', [UserController::class, 'verify'])->name('users.verify');
         Route::resource('data', DataManagementController::class);
         Route::resource('career', CareerController::class);
-        Route::resource('career-statement', CareerStatementController::class);
+        Route::resource('careerStatement', CareerStatementController::class);
         Route::resource('rule', RuleController::class);
+        Route::resource('history', HistoryController::class);
     });
     
     Route::middleware(['role:user'])->name('user.')->group(function () {
@@ -40,6 +46,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/profile', [UserDashboardController::class, 'profile'])->name('dashboard.profile');
         Route::get('/profile/edit', [UserDashboardController::class, 'edit'])->name('profile.edit');
         Route::post('/profile/update', [UserDashboardController::class, 'update'])->name('profile.update');
+        Route::post('/user/password/update', [UserDashboardController::class, 'updatePassword'])->name('password.update');
         Route::get('/result-detail/{career_id}', [UserDashboardController::class, 'resultDetail'])->name('konsultasi.resultDetail');
         Route::get('/konsultasi', [KonsultasiController::class, 'index'])->name('konsultasi.index');
         Route::post('/konsultasi', [KonsultasiController::class, 'store'])->name('konsultasi.store');

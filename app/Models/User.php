@@ -52,4 +52,10 @@ class User extends Authenticatable
     {
         return !is_null($this->email_verified_at);
     }
+
+    public function histories()
+    {
+        return $this->hasMany(History::class);
+    }
+
 }

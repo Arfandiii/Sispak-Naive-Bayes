@@ -37,7 +37,7 @@
                             <tr class="hover:bg-blue-50">
                                 <td class="p-3 border-b">{{ $gejala->kode_pernyataan }}</td>
                                 <td class="p-3 border-b">{{ $gejala->isi_pernyataan }}</td>
-                                <td class="p-3 border-b">Iya</td>
+                                <td class="p-3 border-b">Ya</td>
                             </tr>
                             @endforeach
                         </tbody>

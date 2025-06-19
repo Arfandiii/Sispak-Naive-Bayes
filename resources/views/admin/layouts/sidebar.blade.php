@@ -42,11 +42,11 @@
         <a href="{{ route('admin.data.index') }}">
             <x-nav-link-admin iconType="data">Manajemen Data</x-nav-link-admin>
         </a>
-        <a href="#">
+        <a href="{{ route('admin.history.index') }}">
             <x-nav-link-admin iconType="history">History</x-nav-link-admin>
         </a>
-        <a href="#">
-            <x-nav-link-admin iconType="settings">Pengaturan</x-nav-link-admin>
+        <a href="{{ route('admin.dashboard.profile') }}">
+            <x-nav-link-admin iconType="profile">Pengaturan</x-nav-link-admin>
         </a>
         <form action="{{ route('logout') }}" method="post" class="border-t-2 border-gray-700 pt-2">
             @csrf
@@ -67,11 +67,11 @@
         <a href="{{ route('admin.data.index') }}">
             <x-nav-link-mini-admin iconType="data"></x-nav-link-mini-admin>
         </a>
-        <a href="#">
+        <a href="{{ route('admin.history.index') }}">
             <x-nav-link-mini-admin iconType="history"></x-nav-link-mini-admin>
         </a>
-        <a href="#">
-            <x-nav-link-mini-admin iconType="settings"></x-nav-link-mini-admin>
+        <a href="{{ route('admin.dashboard.profile') }}">
+            <x-nav-link-mini-admin iconType="profile"></x-nav-link-mini-admin>
         </a>
         <form action="{{ route('logout') }}" method="post" class="border-t-2 border-gray-700 pt-2">
             @csrf

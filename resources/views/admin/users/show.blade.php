@@ -9,7 +9,7 @@
         <!-- Container -->
         <!-- Header -->
         <!-- User Info -->
-        <div class="bg-white overflow-hidden shadow rounded-lg border">
+        <div class="bg-white overflow-hidden shadow rounded-lg">
             <div class="px-4 py-5 sm:px-6">
                 <h1 class="text-2xl font-bold text-gray-800 text-center">Detail User</h1>
             </div>
@@ -85,7 +85,8 @@
                 onsubmit="return confirm('Apakah Anda yakin ingin menghapus user ini?');">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition">
+                <button type="submit"
+                    class="cursor-pointer px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition">
                     Hapus
                 </button>
             </form>

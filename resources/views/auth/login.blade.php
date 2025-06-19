@@ -8,7 +8,11 @@
             <h2 class="text-center text-3xl font-extrabold text-blue-600">Sistem Pakar</h2>
             <p class="text-center text-gray-600">Rekomendasi Karir Siswa</p>
         </div>
-
+        @if (session()->has('loginError'))
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+            <p>{{ session('loginError')}}</p>
+        </div>
+        @endif
         <form class="mt-6 space-y-6" action="{{ route('login') }}" method="POST">
             @csrf
             <div class="space-y-2">

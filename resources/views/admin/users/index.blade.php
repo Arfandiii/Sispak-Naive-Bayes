@@ -1,31 +1,30 @@
 @extends('admin.layouts.app')
 
-
 @section('content')
 <div class="content ml-12 transform ease-in-out duration-500 pt-20 px-2 md:px-5 pb-4">
     <div class="p-6 max-w-7xl mx-auto bg-white rounded-lg shadow-md my-10">
         <div class="relative mb-4">
-            {{-- <form action="{{ route('admin.users.search') }}" method="GET">
+            <form action="{{ route('admin.users.index') }}" method="GET">
                 <input type="search"
                     class="px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-indigo-500 focus:ring-indigo-500 block w-full rounded-md sm:text-sm focus:ring-1"
                     placeholder="Search" aria-label="Search" id="search" name="search" value="{{ request('search') }}"
                     autocomplete="off" />
-            </form> --}}
+            </form>
         </div>
 
         {{-- Massage --}}
         @if (session()->has('success'))
-        <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg" role="alert">
+        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
             <p>{{ session('success')}}</p>
         </div>
         @endif
         @if(session('info'))
-        <div class="bg-yellow-500 text-white p-3 rounded mb-4">
+        <div class="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded relative" role="alert">
             {{ session('info') }}
         </div>
         @endif
         @if (session()->has('error'))
-        <div class="p-3 mb-4 text-sm text-red-700 bg-red-100 rounded-lg" role="alert">
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
             <p>{{ session('error')}}</p>
         </div>
         @endif
@@ -34,7 +33,7 @@
             <h2 class="text-lg font-semibold text-gray-900">Daftar Pengguna</h2>
             <div class="mt-4">
                 <a href="{{ route('admin.users.create') }}">
-                    <button class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-500">
+                    <button class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-500 cursor-pointer">
                         Tambah pengguna
                     </button>
                 </a>
@@ -137,8 +136,8 @@
                         </tr>
                         @endif
                         @empty
-                        <tr class="border-b">
-                            <td class="py-4 px-6 text-red-500">User tidak ditemukan.</td>{{--{{ $message }} --}}
+                        <tr class="border border-gray-300 text-center">
+                            <th class="py-4 text-red-500" colspan="7">Data pengguna tidak ditemukan.</th>
                         </tr>
                         @endforelse
                     </tbody>

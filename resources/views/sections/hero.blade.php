@@ -1,7 +1,7 @@
 <section class="py-20 bg-white">
     <div class="container mx-auto px-5 py-24">
-        <h1 class="text-4xl text-center font-bold mb-8">Temukan Jurusan dan Karir yang Sesuai untukmu!</h1>
-        <p class="text-center text-gray-600 mb-12">Sistem ini dirancang untuk membantu siswa memilih jurusan dan
+        <h1 class="text-4xl text-center font-bold mb-8">Temukan Karir yang Sesuai untukmu!</h1>
+        <p class="text-center text-gray-600 mb-12">Sistem ini dirancang untuk membantu siswa memilih
             karir yang sesuai dengan minat dan kemampuan mereka.</p>
 
         <div class="flex flex-wrap justify-center">
@@ -12,7 +12,7 @@
                 <h2 class="text-2xl font-bold mb-4">Mengapa Menggunakan Sistem Kami?</h2>
                 <p class="text-gray-600 mb-6">
                     Sistem kami dikembangkan untuk membantu siswa mengenali minat dan potensi mereka, serta
-                    memberikan rekomendasi jurusan dan karir yang sesuai.
+                    memberikan rekomendasi karir yang sesuai.
                 </p>
                 <ul class="list-disc pl-6 mb-8 space-y-2 text-gray-800">
                     <li><span class="font-semibold text-blue-600">Analisis</span> berbasis minat dan keahlian siswa

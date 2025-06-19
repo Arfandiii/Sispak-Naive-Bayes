@@ -8,6 +8,8 @@ use App\Models\Career;
 use Illuminate\Support\Facades\Auth;
 use App\Models\History;
 use App\Models\StudentAnswer;
+use Illuminate\Support\Facades\Hash;
+
 
 
 class DashboardController extends Controller
@@ -137,5 +139,25 @@ class DashboardController extends Controller
     {
         $user = Auth::user();
         return view('siswa.profile', compact('user'));
+    }
+
+    public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => ['required'],
+            'new_password' => ['required', 'min:8', 'confirmed'],
+        ]);
+
+        $user = Auth::user();
+
+        if (!Hash::check($request->current_password, $user->password)) {
+            return back()->withErrors(['current_password' => 'Password lama tidak cocok.']);
+        }
+
+        $user->update([
+            'password' => Hash::make($request->new_password),
+        ]);
+
+        return back()->with('success', 'Password berhasil diperbarui.');
     }
 }

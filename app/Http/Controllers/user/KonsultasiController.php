@@ -6,9 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\CareerStatement;
 use App\Models\StudentAnswer;
-use App\Models\Career;
 use App\Models\History;
-use App\Models\Rule;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -23,12 +21,16 @@ class KonsultasiController extends Controller
         if (!Auth::check() || Auth::user()->role !== 'user') {
             return redirect()->route('login')->with('error', 'Silakan login terlebih dahulu.');
         }
-
-        $alreadyAnswered = StudentAnswer::where('user_id', Auth::id())->exists();
-        if ($alreadyAnswered) {
+    
+        $userId = Auth::id();
+        $alreadyAnswered = StudentAnswer::where('user_id', $userId)->exists();
+        $hasHistory = History::where('user_id', $userId)->exists();
+    
+        // Cegah redirect loop: hanya redirect jika jawaban dan hasil history tersedia
+        if ($alreadyAnswered && $hasHistory) {
             return redirect()->route('user.konsultasi.result')->with('error', 'Anda sudah melakukan pemilihan. Jika ingin melakukan pemilihan ulang, hubungi admin untuk menghapus data lama.');
         }
-
+    
         $careerStatements = CareerStatement::all();
         return view('siswa.konsultasi', compact('careerStatements'));
     }
@@ -91,6 +93,7 @@ class KonsultasiController extends Controller
     {
         //
     }
+
     public function proses(Request $request)
     {
         $user = Auth::user();
@@ -157,85 +160,6 @@ class KonsultasiController extends Controller
 
         return redirect()->route('user.konsultasi.result')->with('success', 'Diagnosa berhasil!');
     }
-
-
-    // public function proses(Request $request)
-    // {
-    //     $user = Auth::user();
-
-    //     // 1. Ambil semua jawaban 'ya' dari user
-    //     $jawabanYa = StudentAnswer::where('user_id', $user->id)
-    //     ->where('jawaban', true)
-    //     ->pluck('career_statement_id')
-    //     ->toArray();
-
-    //     // 2. Ambil semua rules dari DB dan kelompokkan berdasarkan karir
-    //     $rules = DB::table('rules')
-    //         ->join('careers', 'rules.career_id', '=', 'careers.id')
-    //         ->select('careers.id as career_id', 'careers.kode_karir', 'rules.career_statement_id')
-    //         ->get()
-    //         ->groupBy('career_id');
-
-    //     // Hitung jumlah karir yang memiliki minimal satu rule yang cocok dengan jawaban user
-    //     $jumlahKarir = $rules->filter(function ($ruleItems) use ($jawabanYa) {
-    //         $statementIds = $ruleItems->pluck('career_statement_id')->toArray();
-    //         return count(array_intersect($jawabanYa, $statementIds)) > 0;
-    //     })->count();
-
-    //     // Jika tidak ada karir yang cocok, fallback ke total karir
-    //     if ($jumlahKarir == 0) {
-    //         $jumlahKarir = $rules->count();
-    //     }
-
-    //     $hasilPerKarir = [];
-
-    //     foreach ($rules as $careerId => $ruleItems) {
-    //         $kodeKarir = $ruleItems->first()->kode_karir;
-    //         $statementIds = $ruleItems->pluck('career_statement_id')->toArray();
-
-    //         $jumlahRule = count($statementIds);
-    //         $jumlahCocok = count(array_intersect($jawabanYa, $statementIds));
-
-    //         // Hitung Naive Bayes
-    //         $prior = 1 / $jumlahKarir;
-    //         $likelihood = $jumlahCocok / $jumlahRule;
-    //         $posterior = $prior * $likelihood;
-
-    //         // Simpan ke database
-    //         History::create([
-    //             'user_id' => $user->id,
-    //             'career_id' => $careerId,
-    //             'prior' => $prior,
-    //             'likelihood' => $likelihood,
-    //             'probabilitas' => $posterior,
-    //         ]);
-
-    //         // Simpan ke array untuk mencari hasil terbaik (opsional)
-    //         $hasilPerKarir[] = [
-    //             'career_id' => $careerId,
-    //             'kode_karir' => $kodeKarir,
-    //             'prior' => $prior,
-    //             'likelihood' => $likelihood,
-    //             'posterior' => $posterior,
-    //         ];
-    //     }
-
-    //     // // 3. Ambil hasil tertinggi
-    //     // $tertinggi = collect($hasilPerKarir)->sortByDesc('posterior')->first();
-
-    //     // // 4. Simpan ke tabel histories
-    //     // if ($tertinggi) {
-    //     //     History::create([
-    //     //         'user_id' => $user->id,
-    //     //         'career_id' => $tertinggi['career_id'],
-    //     //         'prior' => $tertinggi['prior'],
-    //     //         'likelihood' => $tertinggi['likelihood'],
-    //     //         'probabilitas' => $tertinggi['posterior'],
-    //     //     ]);
-    //     // }
-
-    //     return redirect()->route('user.konsultasi.result')->with('success', 'Diagnosa berhasil!');
-    // }
 
     public function result()
     {

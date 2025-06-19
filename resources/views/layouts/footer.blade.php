@@ -4,7 +4,7 @@
             <div class="w-full md:w-1/3 p-6">
                 <h3 class="text-xl font-bold mb-4">Sistem Pakar Rekomendasi Karir Siswa</h3>
                 <p class="text-gray-300">
-                    Membantu siswa memilih jurusan dan karir yang tepat berdasarkan analisis minat, bakat, dan
+                    Membantu siswa memilih karir yang tepat berdasarkan analisis minat, bakat, dan
                     kemampuan
                 </p>
             </div>
