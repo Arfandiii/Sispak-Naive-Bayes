@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Admin - Sistem Pakar Rekomendasi Karir Siswa </title>{{-- | {{ $title ?? 'Smansasi-library' }} --}}
+    <title>Dashboard Admin - Sistem Pakar Rekomendasi Karir Siswa</title>
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -24,40 +24,6 @@
         <!-- Konten spesifik halaman -->
         @yield('content')
     </div>
-
-
-    {{-- <script>
-        function displayPreview(event) {
-            const file = event.target.files[0]; // Ambil file yang dipilih
-            if (!file) return; // Jika tidak ada file, hentikan proses
-            
-            // Validasi ukuran file (10MB maksimal)
-            if (file.size > 10 * 1024 * 1024) {
-                alert("Ukuran file terlalu besar! Maksimum 10MB.");
-                event.target.value = ""; // Reset input file
-                return;
-            }
-            
-            // Validasi tipe file
-            const validTypes = ["image/png", "image/jpeg", "image/gif"];
-            if (!validTypes.includes(file.type)) {
-                alert("Format file tidak didukung! Hanya PNG, JPG, atau GIF yang diizinkan.");
-                event.target.value = ""; // Reset input file
-                return;
-            }
-    
-            // Tampilkan preview gambar
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const preview = document.getElementById('preview');
-                const label = document.getElementById('upload-label');
-                preview.src = e.target.result; // Set sumber gambar ke hasil baca file
-                preview.classList.remove('hidden'); // Tampilkan preview
-                label.classList.add('hidden'); // Sembunyikan label
-            };
-            reader.readAsDataURL(file);
-        }
-    </script> --}}
     <script>
         const sidebar = document.querySelector("aside");
             const maxSidebar = document.querySelector(".max");

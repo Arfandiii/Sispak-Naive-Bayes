@@ -6,6 +6,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+use App\Models\History;
+use App\Models\Career;
+use App\Models\CareerStatement;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
@@ -14,15 +20,57 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
-    }
+        $totalUsers = User::where('role', 'user')->count();
+        $totalHistory = History::distinct('user_id')->count('user_id');
+        $totalCareer = Career::count();
+        $totalCareerStatement = CareerStatement::count();
+        // Konsultasi per bulan (6 bulan terakhir)
+        $recentActivities = History::select('user_id', 'created_at')
+        ->distinct()
+        ->orderByDesc('created_at')
+        ->with('user')
+        ->take(5)
+        ->get();
+        
+        // Aktivitas terakhir
+        $latestHistories = History::select('user_id', DB::raw('MAX(created_at) as latest'))
+        ->groupBy('user_id')
+        ->orderByDesc('latest')
+        ->take(5)
+        ->get()
+        ->map(function($item) {
+            $user = \App\Models\User::find($item->user_id);
+            return (object) [
+                'user' => $user,
+                'created_at' => Carbon::parse($item->latest) // konversi string ke Carbon
+            ];
+        });
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
+        $days = collect(range(0, 29))->map(function ($i) {
+            return Carbon::now()->subDays($i)->format('d M'); // atau 'd M Y' kalau ingin lengkap
+        })->reverse()->values();        
+        
+        $dailyUsers = collect(range(0, 29))->map(function ($i) {
+            return User::where('role', 'user')
+                ->whereDate('created_at', Carbon::now()->subDays($i)->toDateString())
+                ->count();
+        })->reverse()->values();
+
+        $dailyHistories = collect(range(0, 29))->map(function ($i) {
+            $date = Carbon::now()->subDays($i)->toDateString();
+            return History::whereDate('created_at', $date)
+                ->selectRaw('DATE(created_at) as date, user_id')
+                ->get()
+                ->groupBy(function ($item) {
+                    return $item->user_id . '|' . $item->date;
+                })
+                ->count();
+        })->reverse()->values();
+
+        return view('admin.dashboard', compact(
+            'totalUsers', 'totalHistory',
+            'recentActivities', 'latestHistories', 'totalCareer', 'totalCareerStatement', 'days', 'dailyUsers', 'dailyHistories'
+        ));
     }
 
     /**
@@ -52,14 +100,6 @@ class DashboardController extends Controller
         ]);
     
         return redirect()->route('admin.dashboard.profile')->with('success', 'Profil berhasil diperbarui.');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 
     public function profile()
