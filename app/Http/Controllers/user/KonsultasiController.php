@@ -158,7 +158,7 @@ class KonsultasiController extends Controller
             ];
         }
 
-        return redirect()->route('user.konsultasi.result')->with('success', 'Diagnosa berhasil!');
+        return redirect()->route('user.konsultasi.result')->with('success', 'Prediksi karir berhasil!');
     }
 
     public function result()
@@ -169,17 +169,17 @@ class KonsultasiController extends Controller
 
         $user = Auth::user();
 
-        // 1. Ambil waktu diagnosa terakhir (paling baru)
+        // 1. Ambil waktu prediksi terakhir (paling baru)
         $lastTimestamp = History::where('user_id', $user->id)
             ->orderByDesc('created_at')
             ->value('created_at'); // ini akan ambil 1 waktu terakhir
 
-        // Jika belum ada hasil diagnosa, redirect ke halaman konsultasi
+        // Jika belum ada hasil prediksi, redirect ke halaman konsultasi
         if (!$lastTimestamp) {
-            return redirect()->route('user.konsultasi.index')->with('error', 'Belum ada hasil diagnosa, silakan lakukan pemilihan terlebih dahulu.');
+            return redirect()->route('user.konsultasi.index')->with('error', 'Belum ada hasil prediksi, silakan lakukan pemilihan terlebih dahulu.');
         }
 
-        // 2. Ambil semua hasil diagnosa dengan waktu itu
+        // 2. Ambil semua hasil prediksi dengan waktu itu
         $latestHistories = History::with('career')
             ->where('user_id', $user->id)
             ->where('created_at', $lastTimestamp)
@@ -187,7 +187,7 @@ class KonsultasiController extends Controller
 
         // Jika data history kosong, redirect juga
         if ($latestHistories->isEmpty()) {
-            return redirect()->route('user.konsultasi.index')->with('error', 'Belum ada hasil diagnosa, silakan lakukan konsultasi terlebih dahulu.');
+            return redirect()->route('user.konsultasi.index')->with('error', 'Belum ada hasil prediksi, silakan lakukan konsultasi terlebih dahulu.');
         }
 
         // 3. Ambil jawaban 'ya'

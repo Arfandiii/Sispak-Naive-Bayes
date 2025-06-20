@@ -60,7 +60,7 @@
                     Kembali
                 </a>
                 <button type="submit"
-                    class="inline-flex items-center justify-center px-6 py-2 bg-indigo-600 text-white font-semibold rounded-md shadow hover:bg-indigo-700 transition duration-150">
+                    class="cursor-pointer inline-flex items-center justify-center px-6 py-2 bg-indigo-600 text-white font-semibold rounded-md shadow hover:bg-indigo-700 transition duration-150">
                     Simpan Pengguna
                 </button>
             </div>

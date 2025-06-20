@@ -6,9 +6,9 @@
         <div class="relative mb-4">
             <form action="{{ route('admin.users.index') }}" method="GET">
                 <input type="search"
-                    class="px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-indigo-500 focus:ring-indigo-500 block w-full rounded-md sm:text-sm focus:ring-1"
-                    placeholder="Search" aria-label="Search" id="search" name="search" value="{{ request('search') }}"
-                    autocomplete="off" />
+                    class="px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-blue-500 block w-full rounded-md sm:text-sm focus:ring-1"
+                    placeholder="Cari berdasarkan nama atau NISN" aria-label="Search" id="search" name="search"
+                    value="{{ request('search') }}" autocomplete="off" />
             </form>
         </div>
 
@@ -33,7 +33,7 @@
             <h2 class="text-lg font-semibold text-gray-900">Daftar Pengguna</h2>
             <div class="mt-4">
                 <a href="{{ route('admin.users.create') }}">
-                    <button class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-500 cursor-pointer">
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-500 cursor-pointer">
                         Tambah pengguna
                     </button>
                 </a>
@@ -78,7 +78,7 @@
                                     @csrf
                                     @method('PATCH')
                                     <button type="submit"
-                                        class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-4 rounded">
+                                        class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-4 rounded cursor-pointer">
                                         Verify
                                     </button>
                                 </form>

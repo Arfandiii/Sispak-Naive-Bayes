@@ -2,7 +2,7 @@
     <div class="container mx-auto px-5">
         <div class="flex flex-wrap justify-between items-center">
             <div class="w-full md:w-1/3 p-6">
-                <h3 class="text-xl font-bold mb-4">Sistem Pakar Rekomendasi Karir Siswa</h3>
+                <h3 class="text-xl font-bold mb-4">Sistem Prediksi Karir Siswa</h3>
                 <p class="text-gray-300">
                     Membantu siswa memilih karir yang tepat berdasarkan analisis minat, bakat, dan
                     kemampuan
@@ -32,7 +32,7 @@
         </div>
         <div class="border-t border-blue-700 mt-6 pt-6">
             <p class="text-center text-gray-300">
-                &copy; 2023 Sistem Pakar Rekomendasi Karir Siswa. Hak Cipta Dilindungi.
+                &copy; 2023 Sistem Prediksi Karir Siswa. Hak Cipta Dilindungi.
             </p>
         </div>
     </div>

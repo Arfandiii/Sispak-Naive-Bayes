@@ -11,7 +11,7 @@
                     {{ session('error') }}
                 </div>
                 @endif
-                <h1 class="text-2xl font-bold text-center mb-6">Sistem Pakar Pemilihan Karir</h1>
+                <h1 class="text-2xl font-bold text-center mb-6">Form Pemilihan Pernyataan Karir</h1>
                 <form id="careerTestForm" class="space-y-6" method="POST" action="{{ route('user.konsultasi.store') }}">
                     @csrf
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
