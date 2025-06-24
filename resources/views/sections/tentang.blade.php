@@ -1,10 +1,10 @@
 <section id="tentang" class="w-full py-20">
     <div class="container mx-auto px-5 py-24">
-        <h2 class="text-3xl font-bold mb-12 text-center">Tentang Sistem Prediksi Karir Siswa</h2>
+        <h2 class="text-3xl font-bold mb-12 text-center">Tentang Sistem Pakar Rekomendasi Karir Siswa</h2>
         <div class="flex flex-wrap">
             <div class="w-full md:w-1/2 p-6">
                 <p class="text-gray-700 mb-5 text-lg leading-relaxed">
-                    <span class="font-semibold text-blue-700">Sistem Prediksi Karir Siswa</span> adalah alat
+                    <span class="font-semibold text-blue-700">Sistem Pakar Rekomendasi Karir Siswa</span> adalah alat
                     yang dirancang khusus untuk membantu siswa dalam memilih karir yang sesuai dengan profil
                     pribadi mereka.
                 </p>

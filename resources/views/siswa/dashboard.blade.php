@@ -11,7 +11,11 @@
                     <p class="text-gray-600">Dashboard Siswa</p>
                 </div>
             </div>
-
+            @if (session('error'))
+            <div class="mb-4 p-4 bg-red-100 text-red-800 border border-red-300 rounded">
+                {{ session('error') }}
+            </div>
+            @endif
             <!-- Stats -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
                 <a href="{{ route('user.konsultasi.result') }}">

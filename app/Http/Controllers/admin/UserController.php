@@ -57,8 +57,8 @@ class UserController extends Controller
         // Validasi data yang diterima menggunakan metode validate dari objek $request
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'nisn' => ['nullable', 'string','max:10', 'min:10', 'unique:users,nisn'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'nisn' => ['required', 'string','max:10', 'min:10', 'unique:users,nisn'],
             'password' => ['required', 'string', 'min:8'],
         ]);
 

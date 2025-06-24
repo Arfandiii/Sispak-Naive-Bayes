@@ -18,29 +18,30 @@ class KonsultasiController extends Controller
      */
     public function index()
     {
+        // Langkah 1: Cek keotentikan user dan role
         if (!Auth::check() || Auth::user()->role !== 'user') {
             return redirect()->route('login')->with('error', 'Silakan login terlebih dahulu.');
         }
-    
+
+        // Langkah 2: Tambahkan pengecekan verifikasi email
+        if (!Auth::user()->email_verified_at) { // Cek apakah email sudah diverifikasi
+            return redirect()->route('user.dashboard')->with('error', 'Email anda belum diverifikasi tidak dapat melakukan konsultasi. Silakan hubungi admin untuk verifikasi.');
+        }
+
+        // Langkah 3: Cek apakah user sudah menjawab pertanyaan atau memiliki history
         $userId = Auth::id();
         $alreadyAnswered = StudentAnswer::where('user_id', $userId)->exists();
         $hasHistory = History::where('user_id', $userId)->exists();
     
-        // Cegah redirect loop: hanya redirect jika jawaban dan hasil history tersedia
+        // Langkah 4: Jika sudah menjawab atau memiliki history, redirect dengan pesan error
         if ($alreadyAnswered && $hasHistory) {
             return redirect()->route('user.konsultasi.result')->with('error', 'Anda sudah melakukan pemilihan. Jika ingin melakukan pemilihan ulang, hubungi admin untuk menghapus data lama.');
         }
-    
+        // Langkah 5: Ambil semua pernyataan karir
         $careerStatements = CareerStatement::all();
+        
+        // Langkah 6: Kembalikan view dengan data pernyataan karir
         return view('siswa.konsultasi', compact('careerStatements'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -60,38 +61,6 @@ class KonsultasiController extends Controller
         }
 
         return redirect()->route('user.konsultasi.proses');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 
     public function proses(Request $request)
